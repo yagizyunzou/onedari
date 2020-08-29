@@ -3,7 +3,7 @@
   <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><label for="name", style="margin-right: 10px;">名前</label><%= @user.name %></h3>
+        <h3 class="card-title"><label for="name" style="margin-right: 10px;">名前</label><%= @user.name %></h3>
         <ul style="list-style: none;">
           <li>
              <% if @user.image? %>
@@ -13,8 +13,8 @@
              <% end %>
           </li>
           <li><label for="sex", style="margin-right: 10px;">性別</label><%= @user.sex %></li>
-          <li><label for="birthday", style="margin-right: 10px;">生年月日</label></li><%= @user.birthday %></li>
-          <li><label for="comment", style="margin-right: 10px;">コメント</label><%= @user.comment %></li>
+          <li><label for="birthday" style="margin-right: 10px;">生年月日</label></li><%= @user.birthday %></li>
+          <li><label for="comment" style="margin-right: 10px;">コメント</label><%= @user.comment %></li>
         </ul>
       </div>
       <% if current_user == @user %>
