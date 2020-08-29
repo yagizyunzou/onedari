@@ -9,7 +9,7 @@
              <% if @item.image? %>
                <%= image_tag @item.image.to_s, :size => "100x100" %>
              <% else %>
-               <%= image_tag "/assets/default.jpg", :size => "100x100" %>
+               <%= image_tag "default.jpg", :size => "100x100" %>
              <% end %>
           </li>
           <li><label for="url", style="margin-right: 10px;">URL</label><%= @item.url %></li>
