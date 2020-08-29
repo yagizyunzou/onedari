@@ -1,6 +1,6 @@
-<%#　ログインユーザーのみ編集可能にする※未実装 %>
 <h1>アイテム編集</h1>
 <%= form_for @item do |f| %>
+ <%= render "layouts/error_messages", model: f.object %>
  <% if @item.image? %>
    <%= image_tag @item.image.url, :size => "100x100" %>
  <% else %>

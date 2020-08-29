@@ -18,8 +18,8 @@
         </ul>
       </div>
       <% if current_user == @item.user %>
-        <%= link_to "編集", edit_item_path, class: "btn btn-lg btn-primary" %> <%# 他のユーザーにみせなくする %>
-        <%= link_to "削除", @item, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %> <%# ボタンのみ設置　機能未実装　pathは仮 他のユーザーにみせなくする  %>
+        <%= link_to "編集", edit_item_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "削除", @item, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %>
       <% end %>
       <%= link_to "投稿ユーザー", @item.user %>
       </div>
