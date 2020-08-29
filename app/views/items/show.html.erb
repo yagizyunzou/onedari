@@ -3,7 +3,7 @@
   <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><label for="name", style="margin-right: 10px;">名前</label><%= @item.name %></h3>
+        <h3 class="card-title"><label for="name" style="margin-right: 10px;">名前</label><%= @item.name %></h3>
         <ul style="list-style: none;">
           <li>
              <% if @item.image? %>
@@ -12,9 +12,9 @@
                <%= image_tag "default.jpg", :size => "100x100" %>
              <% end %>
           </li>
-          <li><label for="url", style="margin-right: 10px;">URL</label><%= @item.url %></li>
-          <li><label for="price", style="margin-right: 10px;">価格</label><%= @item.price %></li>
-          <li><label for="comment", style="margin-right: 10px;">コメント</label></li><%= @item.comment %></li>
+          <li><label for="url" style="margin-right: 10px;">URL</label><%= @item.url %></li>
+          <li><label for="price" style="margin-right: 10px;">価格</label><%= @item.price %></li>
+          <li><label for="comment" style="margin-right: 10px;">コメント</label><%= @item.comment %></li>
         </ul>
       </div>
       <% if current_user == @item.user %>
