@@ -53,3 +53,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'cloudinary'
 gem "kaminari"
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
