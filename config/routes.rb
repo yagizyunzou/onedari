@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   
   get "signup", to: "users#new"
+  get "items/:id/attention", to: "items#attention", as: "attention"
+  
   resources :users
+  resources :items
 end

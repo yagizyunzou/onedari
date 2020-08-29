@@ -1,0 +1,28 @@
+<h1>アイテム詳細</h1>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><label for="name", style="margin-right: 10px;">名前</label><%= @item.name %></h3>
+        <ul style="list-style: none;">
+          <li>
+             <% if @item.image? %>
+               <%= image_tag @item.image.to_s, :size => "100x100" %>
+             <% else %>
+               <%= image_tag "/assets/default.jpg", :size => "100x100" %>
+             <% end %>
+          </li>
+          <li><label for="url", style="margin-right: 10px;">URL</label><%= @item.url %></li>
+          <li><label for="price", style="margin-right: 10px;">価格</label><%= @item.price %></li>
+          <li><label for="comment", style="margin-right: 10px;">コメント</label></li><%= @item.comment %></li>
+        </ul>
+      </div>
+      <% if current_user == @item.user %>
+        <%= link_to "編集", edit_item_path, class: "btn btn-lg btn-primary" %> <%# 他のユーザーにみせなくする %>
+        <%= link_to "削除", @item, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %> <%# ボタンのみ設置　機能未実装　pathは仮 他のユーザーにみせなくする  %>
+      <% end %>
+      <%= link_to "投稿ユーザー", @item.user %>
+      </div>
+    </div>
+  </div>
+<%= link_to "支援する", attention_path(@item), data: { confirm: "支援をしますか？" }, class: "btn btn-lg btn-primary" %>

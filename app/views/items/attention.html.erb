@@ -1,0 +1,5 @@
+<div class="text-center">
+  <h1>外部サイトへ移動します</h1>
+    <% url = "https://www.amazon.jp/hz/wishlist/ls/#{@item.url}" %>
+    <%= link_to "移動する", url, class: "btn btn-lg btn-primary" %>
+</div>

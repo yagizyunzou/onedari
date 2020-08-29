@@ -1,10 +1,10 @@
-<% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
-<% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Onedari トップページ※仮レイアウトです</h1>
-      <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
-    </div>
+<div class="row">
+  <div class="col-sm-4">
+    <h2>新着アイテム</h2>
+    <%= render "items/items", items: @items %>
   </div>
-<% end %>
+  <div class="col-sm-4">
+    <h2>新着ユーザー</h2>
+    <%= render "users/users", users: @users %>
+  </div>
+</div>

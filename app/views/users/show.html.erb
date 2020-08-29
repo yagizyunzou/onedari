@@ -1,13 +1,44 @@
+<h1>ユーザー詳細</h1>
 <div class="row">
-  <aside class="col-sm-4">
+  <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><%= @user.name %></h3>
+        <h3 class="card-title"><label for="name", style="margin-right: 10px;">名前</label><%= @user.name %></h3>
+        <ul style="list-style: none;">
+          <li>
+             <% if @user.image? %>
+               <%= image_tag @user.image.to_s, :size => "100x100" %>
+             <% else %>
+               <%= image_tag "/assets/default.jpg", :size => "100x100" %>
+             <% end %>
+          </li>
+          <li><label for="sex", style="margin-right: 10px;">性別</label><%= @user.sex %></li>
+          <li><label for="birthday", style="margin-right: 10px;">生年月日</label></li><%= @user.birthday %></li>
+          <li><label for="comment", style="margin-right: 10px;">コメント</label><%= @user.comment %></li>
+        </ul>
       </div>
-      <div class="card-body">
-        <img class="rounded img-fluid" src="#" alt="">
+      <% if current_user == @user %>
+        <%= link_to "アイテム登録する", new_item_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "編集", edit_user_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "退会", @user, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %>
+      <% end %>
       </div>
     </div>
-  </aside>
-  <div class="col-sm-8">
-</div>
+  </div>
+  <div class="col-sm-4">
+    <% @user.items.each do |item| %>
+      <div>
+        <% if item.image? %>
+          <%= image_tag item.image.to_s, :size => "100x100" %>
+        <% else %>
+          <%= image_tag "/assets/default.jpg", :size => "100x100" %>
+        <% end %>
+        <%= item.name %>
+        <%= item.comment %>
+      </div>
+      <div>
+        <p><%= link_to "アイテム詳細", item_path(item) %></p>
+      </div>
+    <% end %>
+  </div>
+

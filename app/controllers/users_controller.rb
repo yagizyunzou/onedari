@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:destroy, :edit]
+
   def index
     @users = User.order(id: :desc)
   end
@@ -22,10 +24,33 @@ class UsersController < ApplicationController
       render :new
     end
   end
-end
+  
+  def destroy
+    @user = current_user #機能はしてるが適切ではない？
+    @user.destroy
+    flash[:success] = "退会しました。"
+    render :new
+  end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "ユーザー情報を更新しました"
+      redirect_to @user
+    else
+      flash.now[:danger] = "ユーザー情報を更新できませんでした"
+      render :edit
+    end
+  end
 
-private
+  private
 
-def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :birthday, :comment, :sex)
+  end
+  
 end
