@@ -12,9 +12,9 @@
                <%= image_tag "default.jpg", :size => "100x100" %>
              <% end %>
           </li>
-          <li><label for="url" style="margin-right: 10px;">URL</label><%= @item.url %></li>
-          <li><label for="price" style="margin-right: 10px;">価格</label><%= @item.price %></li>
-          <li><label for="comment" style="margin-right: 10px;">コメント</label><%= @item.comment %></li>
+          <li><label style="margin-right: 10px;">URL</label><%= @item.url %></li>
+          <li><label style="margin-right: 10px;">価格</label><%= @item.price %></li>
+          <li><label style="margin-right: 10px;">コメント</label><%= @item.comment %></li>
         </ul>
       </div>
       <% if current_user == @item.user %>

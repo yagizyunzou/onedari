@@ -1,5 +1,6 @@
 <div class="text-center">
+  <% url = "https://www.amazon.jp/hz/wishlist/ls/#{@item.url}" %>
   <h1>外部サイトへ移動します</h1>
-    <% url = "https://www.amazon.jp/hz/wishlist/ls/#{@item.url}" %>
+  <h2><%= url %></h2>
     <%= link_to "移動する", url, class: "btn btn-lg btn-primary" %>
 </div>
