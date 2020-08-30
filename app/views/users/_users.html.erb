@@ -5,9 +5,9 @@
         <div class="media-body">
           <div>
             <% if user.image? %>
-              <%= image_tag user.image.to_s, :size => "100x100" %>
+              <%= image_tag user.image.to_s, alt: "User image", :size => "100x100" %>
             <% else %>
-              <%= image_tag "default.jpg", :size => "100x100" %>
+              <%= image_tag "default.jpg", alt: "User image", :size => "100x100" %>
             <% end %>
             <%= user.name %>
             <%= user.comment %>
