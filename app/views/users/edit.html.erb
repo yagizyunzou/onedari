@@ -3,7 +3,7 @@
  <% if @user.image? %>
    <%= image_tag @user.image.url, alt: "User image", :size => "100x100" %>
  <% else %>
-   <%= image_tag "/assets/default.jpg", alt: "User image", :size => "100x100" %>
+   <%= image_tag "default.jpg", alt: "User image", :size => "100x100" %>
  <% end %>
    <button type="button" class="btn btn-outline-secondary rounded-pill">
      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
