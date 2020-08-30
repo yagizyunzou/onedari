@@ -29,9 +29,9 @@
     <% @user.items.each do |item| %>
       <div>
         <% if item.image? %>
-          <%= image_tag item.image.to_s, :size => "100x100" %>
+          <%= image_tag item.image.to_s, alt: "Item image", :size => "100x100" %>
         <% else %>
-          <%= image_tag "default.jpg", :size => "100x100" %>
+          <%= image_tag "default.jpg", alt: "Item image", :size => "100x100" %>
         <% end %>
         <%= item.name %>
         <%= item.comment %>
