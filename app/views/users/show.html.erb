@@ -40,7 +40,7 @@
           <div class="col-sm-8">
             <div class="card-body">
               <h4 class="card-title"><%= item.name %></h4>
-              <p class="card-text"><%= item.comment %></p>
+              <p class="card-text"><%= item.comment.truncate(50) %></p>
               <p><%= link_to 'Onedari詳細', item_path(item) %></p>
             </div>
           </div>

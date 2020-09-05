@@ -11,8 +11,8 @@
           </div>
           <div class="col-sm-8">
             <div class="card-body">
-              <h4 class="card-title"><%= item.name %></h4>
-              <p class="card-text"><%= item.comment %></p>
+              <h4 class="card-title"><%= item.name.truncate(20) %></h4>
+              <p class="card-text"><%= item.comment.truncate(50) %></p>
               <p><%= link_to 'Onedari詳細', item_path(item) %></p>
             </div>
           </div>
