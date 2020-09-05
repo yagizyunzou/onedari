@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>アイテム登録</h1>
+  <h1>Onedari登録</h1>
 </div>
 
 <div class="row">
@@ -8,22 +8,22 @@
       <%= render "layouts/error_messages", model: f.object %>
       
       <div class="form-group">
-        <%= f.label :name, '名前' %>
+        <%= f.label :name, 'Onedariするもの' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-
-      <div class="form-group">
-        <%= f.label :url, 'Amazonほしい物リストのURL：https://www.amazon.jp/hz/wishlist/ls/' %>
-        <%= f.text_field :url, :placeholder => "上記URLに続く文字列を入力", class: 'form-control' %>
-      </div>
+      
+        <div class="form-group">
+          <i class="fab fa-amazon", style="margin-right: 10px;"></i><%= f.label :url, 'https://www.amazon.jp/hz/wishlist/ls/' %>
+          <%= f.text_field :url, :placeholder => "上記URLに続く文字列を入力（Amazonほしい物リストのURL）", class: 'form-control' %>
+        </div>
       
       <div class="form-group">
-        <%= f.label :price, '価格' %>
+        <i class="fas fa-yen-sign", style="margin-right: 10px;"></i><%= f.label :price %>
         <%= f.text_field :price, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :comment, 'コメント' %>
+        <i class="far fa-comment", style="margin-right: 10px;"></i><%= f.label :comment %>
         <%= f.text_field :comment, class: 'form-control' %>
       </div>
 

@@ -1,10 +1,10 @@
-<h1>アイテム編集</h1>
+<h1>Onedari編集</h1>
 <%= form_for @item do |f| %>
  <%= render "layouts/error_messages", model: f.object %>
  <% if @item.image? %>
-   <%= image_tag @item.image.url, alt: "Item image", :size => "100x100" %>
+   <%= image_tag @item.image.url, alt: "Item image", :width => "20%", :height => "auto" %>
  <% else %>
-   <%= image_tag "default.jpg", alt: "item image", :size => "100x100" %>
+   <%= image_tag "default.jpg", alt: "item image", :width => "20%", :height => "auto" %>
  <% end %>
    <button type="button" class="btn btn-outline-secondary rounded-pill">
      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>

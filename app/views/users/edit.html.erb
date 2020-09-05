@@ -1,9 +1,9 @@
-<h1>ユーザー編集</h1>
+<h1>Nedarist編集</h1>
 <%= form_for @user do |f| %>
  <% if @user.image? %>
-   <%= image_tag @user.image.url, alt: "User image", :size => "100x100" %>
+   <%= image_tag @user.image.url, alt: "User image", :width => "20%", :height => "auto" %>
  <% else %>
-   <%= image_tag "default.jpg", alt: "User image", :size => "100x100" %>
+   <%= image_tag "default.jpg", alt: "User image", :width => "20%", :height => "auto" %>
  <% end %>
    <button type="button" class="btn btn-outline-secondary rounded-pill">
      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
