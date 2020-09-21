@@ -21,8 +21,8 @@
         <%= link_to "編集", edit_item_path, class: "btn btn-lg btn-primary" %>
         <%= link_to "削除", @item, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %>
       <% end %>
-      <%= link_to "Nedarist", @item.user, class: "btn btn-lg btn-link" %>
+      <%= link_to "Onedariユーザー", @item.user, class: "btn btn-lg btn-link" %>
       <%= link_to "支援する", attention_path(@item), data: { confirm: "支援をしますか？" }, class: "btn btn-lg btn-primary" %>
-      </div>
     </div>
   </div>
+</div>

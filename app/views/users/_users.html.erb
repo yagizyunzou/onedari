@@ -12,7 +12,7 @@
           <div class="col-sm-8">
             <div class="card-body">
               <h4 class="card-title"><%= user.name.truncate(20) %></h4>
-              <p class="card-text"><%= user.comment %></p>
+              <p class="card-text"><%= user.comment.to_s.truncate(50) %></p>
               <p><%= link_to 'プロフィール', user_path(user) %></p>
             </div>
           </div>
