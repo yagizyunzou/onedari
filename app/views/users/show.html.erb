@@ -6,7 +6,7 @@
       <div class="card-header">
         <h3 class="card-title"><label style="margin-right: 10px;">名前</label><%= @user.name %></h3>
         <ul style="list-style: none;">
-          <li>
+          <li style="text-align: center">
              <% if @user.image? %>
                <%= image_tag @user.image.to_s, alt: "User image", :width => "50%", :height => "auto" %>
              <% else %>
@@ -30,7 +30,7 @@
     <% @user.items.each do |item| %>
       <div class="card sm-3" style="max-width: 540px">
         <div class="row no-gutters">
-          <div class="col-sm-4 my-auto">
+          <div class="col-sm-4 my-auto" style="text-align: center">
             <% if item.image? %>
               <%= image_tag item.image.to_s, alt: "Item image", :width => "50%", :height => "auto" %>
             <% else %>

@@ -2,7 +2,7 @@
     <% items.each do |item| %>
       <div class="card sm-3" style="max-width: 540px">
         <div class="row no-gutters">
-          <div class="col-sm-4 my-auto">
+          <div class="col-sm-4 my-auto" style="text-align: center">
             <% if item.image? %>
               <%= image_tag item.image.to_s, alt: "Item image", :width => "50%", :height => "auto" %>
             <% else %>
