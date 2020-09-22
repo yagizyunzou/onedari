@@ -4,9 +4,9 @@
         <div class="row no-gutters">
           <div class="col-sm-4 my-auto" style="text-align: center">
             <% if item.image? %>
-              <%= image_tag item.image.to_s, alt: "Item image", :width => "50%", :height => "auto" %>
+              <%= link_to image_tag(item.image.to_s, alt: "Item image", :width => "50%", :height => "auto"), item_path(item) %>
             <% else %>
-              <%= image_tag "default.jpg", alt: "Item image", :width => "50%", :height => "auto" %>
+              <%= link_to image_tag("default.jpg", alt: "Item image", :width => "50%", :height => "auto"), item_path(item) %>
             <% end %>
           </div>
           <div class="col-sm-8">

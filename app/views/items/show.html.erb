@@ -7,9 +7,9 @@
         <ul style="list-style: none;">
           <li style="text-align: center">
              <% if @item.image? %>
-               <%= image_tag @item.image.to_s, alt: "Item image", :width => "50%", :height => "auto" %>
+               <%= link_to image_tag(@item.image.to_s, alt: "Item image", :width => "50%", :height => "auto"), item_path(@item) %>
              <% else %>
-               <%= image_tag "default.jpg", alt: "Item image", :width => "50%", :height => "auto" %>
+               <%= link_to image_tag("default.jpg", alt: "Item image", :width => "50%", :height => "auto"), item_path(@item) %>
              <% end %>
           </li>
           <li><label style="margin-right: 10px;"><i class="fab fa-amazon"></i></label><%= @item.url %></li>
